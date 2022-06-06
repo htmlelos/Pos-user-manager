@@ -1,0 +1,81 @@
+{
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".ts"]
+        }
+      }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "*/**/*.{spec,test}.{ts,tsx}",
+          "**/__mocks__/*.{ts,tsx}",
+          "**/__test__/*.{ts,tsx}"
+        ],
+        "env": {
+          "jest": true
+        },
+        "rules": {
+          "max-statements": ["error", { "max": 14 }],
+          // TypeScript rules
+          "@typescript-eslint/no-explicit-any": "off",
+          "@typescript-eslint/ban-ts-comment": "off",
+          "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            {
+              // if true, only functions which are part of a declaration will be checked
+              "allowExpressions": true,
+              // if true, type annotations are also allowed on the variable of a function expression rather than on the function directly
+              "allowTypedFunctionExpressions": true,
+              // if true, functions immediately returning another function expression will not be checked
+              "allowHigherOrderFunctions": false
+            }
+          ]
+        }
+      },
+      {
+        "files": ["*/**/*.js"],
+
+        "rules": {
+          "@typescript-eslint/explicit-function-return-type": "off"
+        }
+      }
+    ]
+}

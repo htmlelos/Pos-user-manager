@@ -1,0 +1,37 @@
+{
+  "name": "users-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r ./src/index.ts",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.5.2",
+    "@types/supertest": "^2.0.12",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.3",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "jest": "^28.1.0"
+  },
+  "collectCoverageFrom": [
+    "**/*.{js, jsx, ts, tsx}",
+    "!**/*.d.ts",
+    "!**/node_modules/**"
+  ],
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "tsconfig.json"
+    }
+  }
+}
